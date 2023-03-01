@@ -13,7 +13,8 @@ class MarvelService {
 
     getAllCharacters = async () => {
         const res = await this.getResource('https://gateway.marvel.com:443/v1/public/characters?limit=9&offset=210&apikey=bd5afe896d3938eaf9720dae3807fba6')
-        return res.data.results.map(this._transformerCharacters);
+        return res.data.results.map(this._transformerCharacters);    // Что здесь в качестве аргумента char?
+        // return res.data.results.map((item) => (this._transformCharacter(item)))      // Более понятный вариант
     }
 
     getCharacter = async (id) => {
